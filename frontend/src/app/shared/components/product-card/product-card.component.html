@@ -1,0 +1,18 @@
+<div class="product-card">
+  <div class="product-image">
+    <img [src]="product.imagem" [alt]="product.nome" loading="eager">
+  </div>
+  
+  <div class="product-info">
+    <span class="product-category">{{ product.categoria }}</span>
+    <h3 class="product-name">{{ product.nome }}</h3>
+    <p class="product-description">{{ product.descricao }}</p>
+    
+    <div class="product-footer">
+      <span class="product-price">{{ formatPrice(product.preco) }}</span>
+      <button class="btn-details" (click)="onViewDetails()">
+        Ver Detalhes
+      </button>
+    </div>
+  </div>
+</div>

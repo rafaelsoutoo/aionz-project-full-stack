@@ -1,0 +1,71 @@
+<div class="product-detail-page">
+  <div *ngIf="isLoading" class="loading">
+    <div class="spinner"></div>
+    <p>Carregando produto...</p>
+  </div>
+
+  <!-- Not Found State -->
+  <div *ngIf="!isLoading && notFound" class="not-found">
+    <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="8" x2="12" y2="12"></line>
+      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+    </svg>
+    <h2>Produto não encontrado</h2>
+    <p>O produto que você está procurando não existe ou foi removido.</p>
+    <button class="btn-primary" (click)="goBack()">
+      Voltar para produtos
+    </button>
+  </div>
+
+  <div *ngIf="!isLoading && product" class="product-content">
+    <div class="container">
+      <button class="btn-back" (click)="goBack()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Voltar
+      </button>
+
+      <div class="product-grid">
+        <div class="product-image-section">
+          <img [src]="product.imagem" [alt]="product.nome">
+        </div>
+
+        <div class="product-info-section">
+          <div class="product-badge">{{ product.categoria }}</div>
+          
+          <h1 class="product-title">{{ product.nome }}</h1>
+          
+          <div class="product-price-section">
+            <span class="product-price">{{ formatPrice(product.preco) }}</span>
+            
+          </div>
+
+          <div class="product-description">
+            <h2>Descrição</h2>
+            <p>{{ product.descricao }}</p>
+          </div>
+
+          <div class="product-meta">
+            <div class="meta-item">
+              <span class="meta-label">ID do Produto:</span>
+              <span class="meta-value">{{ product.id }}</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Categoria:</span>
+              <span class="meta-value">{{ product.categoria }}</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Adicionado em:</span>
+              <span class="meta-value">{{ formatDate(product.createdAt) }}</span>
+            </div>
+          </div>
+
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
