@@ -103,7 +103,6 @@ export class ProductsController {
   @ApiQuery({ name: 'page', required: false, type: Number, description: 'Número da página' })
   @ApiQuery({ name: 'limit', required: false, type: Number, description: 'Limite de itens por página' })
   @ApiQuery({ name: 'query', required: false, type: String, description: 'Filtrar por nome ' })
-  @ApiBearerAuth()
   @ApiOperation({
     summary: 'Listar produtos',
     description: ' Retorna uma lista de produtos, com filtros opcionais e paginação.',
