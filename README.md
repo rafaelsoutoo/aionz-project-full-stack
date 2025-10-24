@@ -1,9 +1,3 @@
-# Aionz
-
-Projeto full stack com back-end em NestJS e front-end em Angular.
-
----
-
 ## Back-end
 
 API REST desenvolvida com NestJS, TypeScript, Prisma e PostgreSQL.
