@@ -50,3 +50,5 @@ Aplicação desenvolvida com Angular.
    ```bash
    ng serve
    ```
+- FRONT: http://localhost:4200  
+
