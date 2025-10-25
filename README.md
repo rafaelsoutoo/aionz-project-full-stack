@@ -20,7 +20,7 @@ API REST desenvolvida com NestJS, TypeScript, Prisma e PostgreSQL.
 4. Gerar o Prisma Client e executar as migrations  
    ```bash
    npx prisma generate
-   npx prisma migrate dev
+   npx prisma migrate deploy
    ```
 
 5. Iniciar a aplicação  
